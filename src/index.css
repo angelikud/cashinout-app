@@ -50,12 +50,16 @@ body {
 
 @media (min-width: 431px) {
   body {
-    background: #050505;
+    background: #ffffff;
   }
   #root {
-    border-left: 1px solid rgba(255,255,255,0.06);
-    border-right: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 0 80px rgba(0,240,255,0.04);
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    border-radius: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: calc(100vh - 40px);
   }
 }
 

@@ -20,9 +20,15 @@
   --font-mono: "Space Mono", monospace;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Fix Tailwind v4 border reset — force solid */
+*, *::before, *::after {
+  border-style: solid;
+  border-width: 0;
+}
 
 html, body, #root {
+  margin: 0;
+  padding: 0;
   height: 100%;
   overflow: hidden;
 }
@@ -39,6 +45,7 @@ body {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  background: var(--color-bg);
 }
 
 @media (min-width: 431px) {
@@ -48,18 +55,18 @@ body {
   #root {
     border-left: 1px solid rgba(255,255,255,0.06);
     border-right: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 0 60px rgba(0,240,255,0.03);
+    box-shadow: 0 0 80px rgba(0,240,255,0.04);
   }
 }
 
-/* No scrollbar */
+/* Scrollbar hide */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Neon shadows */
-.shadow-neon-blue { box-shadow: 0 0 10px rgba(0,240,255,0.5), 0 0 20px rgba(0,240,255,0.3); }
-.shadow-neon-purple { box-shadow: 0 0 10px rgba(188,19,254,0.5), 0 0 20px rgba(188,19,254,0.3); }
-.shadow-card-glow { box-shadow: 0 0 15px rgba(0,240,255,0.15); }
+/* Neon shadows — !important to override Tailwind shadow layer */
+.shadow-neon-blue { box-shadow: 0 0 10px rgba(0,240,255,0.5), 0 0 20px rgba(0,240,255,0.3) !important; }
+.shadow-neon-purple { box-shadow: 0 0 10px rgba(188,19,254,0.5), 0 0 20px rgba(188,19,254,0.3) !important; }
+.shadow-card-glow { box-shadow: 0 0 15px rgba(0,240,255,0.15), 0 0 40px rgba(0,240,255,0.05) !important; }
 
 /* Screen transitions */
 .screen-enter { animation: screenIn 0.25s ease-out; }
@@ -68,10 +75,15 @@ body {
   to   { opacity: 1; transform: none; }
 }
 
-/* Tab indicator pulse */
+/* Tab indicator */
 .tab-dot {
   width: 4px; height: 4px;
   background: var(--color-primary);
   border-radius: 50%;
   margin-top: 2px;
+}
+
+/* Status bar safe area */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 12px);
 }

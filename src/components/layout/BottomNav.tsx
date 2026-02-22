@@ -13,7 +13,7 @@ export default function BottomNav() {
   const { activeTab, setTab, openQR } = useAppStore()
 
   return (
-    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-50 px-4 pb-4">
+    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[412px] z-50 px-4 pb-4">
       <div
         className="rounded-3xl p-2 flex justify-between items-center"
         style={{

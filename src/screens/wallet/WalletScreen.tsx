@@ -110,7 +110,7 @@ export default function WalletScreen() {
     <div className="screen-enter">
       <Header />
 
-      <main className="px-6 mt-2 pb-28 overflow-y-auto" style={{ height: 'calc(100vh - 120px)' }}>
+      <main className="px-6 pb-28 overflow-y-auto" style={{ height: 'calc(100% - 56px)' }}>
         {/* Greeting */}
         <p className="text-gray-400 text-sm font-medium">
           Добрый день, {user.name}
